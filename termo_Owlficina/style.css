@@ -1,0 +1,190 @@
+
+[Tema="duo"]{
+  --background: #fff;
+  --texto1: #fff;
+  --text02: #3c7f19;
+  --titulo: #58CC02;
+  --menu: #46A302;
+  --background-teclado:#5da039;
+  --bordas:#ace88c;
+
+  --background-letra:  #d8f4d4;
+  --background-certa:#58CC02;
+  --background-presente:#FFD43B;
+  --background-ausente: #bcccb8;
+  --background-espera:#9fd499;
+
+  --dicaDisponivel:#dc7bff;
+  --dicaGasta:#787c7e;
+
+  --visibilidade:inherit;
+
+}
+
+
+body {
+    background-color: var(--background);
+     background-position: center center;
+    font-family: sans-serif;
+    margin: 0;
+    height: 100vh;
+
+}
+
+/* Centralizando o conteúdo principal */
+main{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  
+}
+
+h1 {
+    color: var(--titulo);
+    text-align: center;
+    font-size: 35px;
+}
+
+#menu {
+    height: 80px;
+    display: flex;
+    background-color: var(--menu);
+    justify-content: space-between;
+}
+
+#conteiner{
+    width: 250px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#conteiner a {
+  color: var(--texto1);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.linha {
+  display: flex;
+  gap: 5px; /* Espaço entre as letras */
+  margin-bottom: 5px;
+}
+
+#teclado-do-jogo {
+	margin-top: 45px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.teclado {
+    width: 50px;
+    height: 40px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--texto1);
+	background-color: var(--background-teclado);
+	border: none; /* Removendo borda padrão do botão */
+    border-radius: 5px;
+}
+
+.backspace, .enter {
+	background-color: var(--background-teclado);
+	border: none; /* Removendo borda padrão do botão */
+    border-radius: 5px;
+    padding: 0 16px;
+	color: var(--texto1);
+	font-size: 1.2rem;
+}
+
+.letra {
+  width: 30px;
+  color: var(--text02);
+  height: 30px;
+  background-color: var(--background-letra); /* Removendo cor padrão do input */
+  border: 2px solid var(--bordas);
+  border-radius: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Classes para os estados das letras */
+.letra.correta {
+  background-color: var(--background-certa); /* Letras presentes em lugares CORRETOS */
+  color: var(--texto1);
+  border-color: var(--background-certa);
+}
+
+
+.letra.presente {
+  background-color:var(--background-presente) ; /* Letras presentes em lugares ERRADOS */
+  color: var(--texto1);
+  border-color: var(--background-presente);
+}
+
+.letra.ausente {
+  background-color: var(--background-ausente); /* Letras AUSENTES */
+  color: var(--texto1);
+  border-color:var(--background-ausente) ;
+}
+
+.letra.ativas { /* Letras de Linhas ativas */
+	background-color: transparent;
+}
+
+.letra.espera { /* Letras de Linhas ainda não jogadas */
+	background-color: var(--background-espera);
+	border-radius: 5px;
+	border: 2px solid var(--background-espera);
+}
+
+
+
+/*PAGINA DUETO ******************************/
+
+#conteiner-dueto {
+      margin: auto;
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+}
+#conteiner-dueto img{
+    width: 160px;
+    margin: 0px 40px 0 40px;
+    visibility: var(--visibilidade);
+}
+
+#dica {
+    display: flex;
+    height: 40px;
+    width: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--texto1);
+}
+
+.dicaDisponivel {
+  background-color: var(--dicaDisponivel);
+}
+
+.dicaGasta {
+  background-color: var(--dicaGasta);
+}
+
+#imgDuo {
+    margin-top: -250px;
+    width: 220px;
+    margin-right: -546px;
+}
+
